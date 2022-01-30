@@ -1,7 +1,4 @@
-const StormDB = require('stormdb');
-const engine = new StormDB.localFileEngine('./db/db.stormdb');
-const db = new StormDB(engine);
-db.default({ books: [] });
+const db = require('../model/stormDB');
 
 const getAll = (req, res) => {
   const books = db.get('books').value() || [];
